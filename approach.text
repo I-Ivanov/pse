@@ -1,0 +1,52 @@
+PSE Second Task approach
+	
+
+	Planning the task:
+		requirments:
+			- two views :
+					1 where the city is displayed plus the weather information 
+					1 for the impressum
+			since we have two different views we need two different controllers to have better structured code
+
+			to keep the DRY principle i will split those views into 1 layout plus 2 partial views
+
+	Research:
+	 - going through https://thinkster.io/a-better-way-to-learn-angularjs/ angular tutorial
+	 - read the controller as a syntax article (interesting approach wonder if it is used in the development of the selbstentiwcklungsraum will check later)
+	
+	 - read in details about controllers, directives, services, templates and routing since those topics are most relevant for the task
+
+
+	 Development
+
+	 	1st Installation of angular using npm
+
+	 	2nd creating the index.html file using the html script provided in the email
+
+	 	3rd reinstalling angular with bower since the ng-route is better to be in the bower.json and is needed for the routing
+
+	 	
+	 	Designed the applicaiton structure based on the requirments.
+
+	 	Started with weahterApp.js : application and routes configuration
+	 	Than used the provided html for the weather.html
+	 	Developed the WeatherCtrl with dummy entries at first to be shown in the ng-repeat
+	 	Than read what i need to make the call to openweathermap.org
+	 	Injected $http in the WeatherCtrl
+
+	 	used $http.jsonp to get around the cross domain request with $http.get the following error occurs:
+	 	XMLHttpRequest cannot load http://api.openweathermap.org/data/2.5/weather?q=asas&units=metric. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://pse.local' is therefore not allowed access. The response had HTTP status code 500.
+
+	 	added the ng-model to read the input text and use it as search term for the request
+
+	 	added the units to have temperature in celsius
+
+	 	added the case when no city is found and the div to show the msg in the weather.html
+
+	 	Proceeded with the impressum page and the button which triggers the navigation from the weather page.
+
+	 	Did similar funciton in the impressum page to go back to home
+
+	 	Did some testing. Since not a production app checking if the city name is already in the list and having in mind it was in the requirements didnt do it. 
+
+	 	For the template files to be server and the application to be running there has to be a virtual host configured in my case with apache to serve the html files
