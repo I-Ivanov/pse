@@ -1,0 +1,11 @@
+<div class="content">
+	<h1>Wetter App</h1>
+	    <ul ng-Repeat="info in weatherInfo" ng-cloack>
+	    	<li>{{info.city}} - {{info.temp}} Grad Celsius</li>
+	    </ul>
+	<input type="text" ng-model="searchTerm"/>
+	<button ng-click="search()">Stadt hinzufügen</button>
+	<div><span>{{errorMsg}}</span></div>
+	<br \>
+	<button ng-click="goToImpressum()">Impressum</button>
+</div>
